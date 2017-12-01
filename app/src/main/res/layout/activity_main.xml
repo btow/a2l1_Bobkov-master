@@ -21,6 +21,7 @@
         android:layout_height="40dp"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fa_add_margin"
-        app:srcCompat="@drawable/ic_add_circle_outline_black_24dp" />
+        app:srcCompat="@drawable/ic_add_circle_outline_black_24dp"
+        android:theme="@style/ButttonAdd"/>
 
 </android.support.constraint.ConstraintLayout>

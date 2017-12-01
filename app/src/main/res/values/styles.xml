@@ -8,4 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="ButttonAdd" parent="AppTheme">
+        <item name="colorAccent">@color/colorAccentButtonAdd</item>
+    </style>
 </resources>
