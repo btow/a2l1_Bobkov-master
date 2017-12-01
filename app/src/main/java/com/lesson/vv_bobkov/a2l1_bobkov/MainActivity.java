@@ -7,19 +7,14 @@ import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.ListView;
 
 import java.util.HashMap;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
-import static com.lesson.vv_bobkov.a2l1_bobkov.R.color.colorLightGray;
-import static com.lesson.vv_bobkov.a2l1_bobkov.R.color.colorWithe;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -107,20 +102,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean onClickMenuItem(MenuItem item) {
+
         Intent intent = new Intent(this, NoteActivity.class);
+
         switch (item.getItemId()) {
-
-            case R.id.actionAdd:
-                App.NOTES_MODE = App.NOTES_MODE_EDIT;
-
-                if (App.selectedItemsIsEmpty()) {
-                    App.createSelectedItems();
-                } else {
-                    App.getSelectedItems().clear();
-                }
-                startActivity(intent);
-
-                return true;
 
             case R.id.actionRem:
 
@@ -156,5 +141,18 @@ public class MainActivity extends AppCompatActivity {
                 }
         }
         return false;
+    }
+
+    public void onClickAdd(View view) {
+
+        Intent intent = new Intent(this, NoteActivity.class);
+        App.NOTES_MODE = App.NOTES_MODE_EDIT;
+
+        if (App.selectedItemsIsEmpty()) {
+            App.createSelectedItems();
+        } else {
+            App.getSelectedItems().clear();
+        }
+        startActivity(intent);
     }
 }

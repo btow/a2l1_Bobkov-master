@@ -25,7 +25,7 @@ public class App extends Application {
     private static Menu mMenu;
     private static App mApp;
 
-    public App(){
+    public App() {
         mApp = this;
     }
 
@@ -96,13 +96,8 @@ public class App extends Application {
 
                 MenuItem menuItem = menu.getItem(i);
 
-                if (menuItem.getTitle().equals(mApp.getResources().getString(R.string.add))) {
-                    menuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
-                    menuItem.setVisible(true);
-                } else {
-                    menuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
-                    menuItem.setVisible(false);
-                }
+                menuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
+                menuItem.setVisible(false);
             }
         } else if (App.getSelectedItems().size() > 1) {
 
@@ -111,9 +106,8 @@ public class App extends Application {
                 MenuItem menuItem = menu.getItem(i);
 
                 menuItem.setVisible(true);
-                if (menuItem.getTitle().equals(mApp.getResources().getString(R.string.add))) {
-                    menuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
-                } else if (menuItem.getTitle().equals(mApp.getResources().getString(R.string.remove))) {
+
+                if (menuItem.getTitle().equals(mApp.getResources().getString(R.string.remove))) {
                     menuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
                 } else {
                     menuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
@@ -125,11 +119,7 @@ public class App extends Application {
             for (int i = 0; i < menu.size(); i++) {
 
                 MenuItem menuItem = menu.getItem(i);
-                if (menuItem.getTitle().equals(mApp.getResources().getString(R.string.add))) {
-                    menuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
-                } else {
-                    menuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
-                }
+                menuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
                 menuItem.setVisible(true);
             }
         }

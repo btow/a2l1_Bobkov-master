@@ -15,13 +15,24 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/faAdd"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fa_add_margin"
-        app:srcCompat="@drawable/ic_add_circle_outline_black_24dp"
-        android:theme="@style/ButttonAdd"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/faAdd"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="13dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginRight="14dp"
+            android:theme="@style/ButttonAdd"
+            app:srcCompat="@drawable/ic_add_circle_outline_black_24dp"
+            android:onClick="onClickAdd"/>
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
